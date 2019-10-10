@@ -11,3 +11,7 @@ if len(sys.argv)!=2:
 
 if len(sys.argv) > 1:
     ipaddr = sys.argv[1]
+
+geody = "http://www.geody.com/geoip.php?ip=" + ipaddr
+html_page = urllib2.urlopen(geody).read()
+soup = BeautifulSoup4.BeautifulSoup(html_page)
